@@ -40,7 +40,7 @@ One more thing: knowing these won't immediately make you a better software
 developer, and working with them for many years doesn't mean you won't make
 mistakes. Every piece of code starts as a first draft, like wet clay getting
 shaped into its final form. Finally, we chisel away the imperfections when
-we review it with our peers. Don't beat yourself up for first drafts that need
+we review them with our peers. Don't beat yourself up for first drafts that need
 improvement. Beat up the code instead!
 
 ## **Variables**
@@ -203,7 +203,7 @@ function paintCar(car, color) {
 
 ### Use default parameters instead of short circuiting or conditionals
 
-Default parameters are often cleaner than short circuiting. Be aware that if you
+Default parameters are often cleaner than short-circuiting. Be aware that if you
 use them, your function will only provide default values for `undefined`
 arguments. Other "falsy" values such as `''`, `""`, `false`, `null`, `0`, and
 `NaN`, will not be replaced by a default value.
@@ -231,7 +231,7 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 ### Function arguments (2 or fewer ideally)
 
-Limiting the amount of function parameters is incredibly important because it
+Limiting the number of function parameters is incredibly important because it
 makes testing your function easier. Having more than three leads to a
 combinatorial explosion where you have to test tons of different cases with
 each separate argument.
@@ -443,7 +443,7 @@ different things with just one function/module/class.
 Getting the abstraction right is critical, that's why you should follow the
 SOLID principles laid out in the _Classes_ section. Bad abstractions can be
 worse than duplicate code, so be careful! Having said this, if you can make
-a good abstraction, do it! Don't repeat yourself, otherwise you'll find yourself
+a good abstraction, do it! Don't repeat yourself, otherwise, you'll find yourself
 updating multiple places anytime you want to change one thing.
 
 **Bad:**
@@ -653,13 +653,13 @@ Suppose there's a function that accepts an array parameter representing a
 shopping cart. If the function makes a change in that shopping cart array - 
 by adding an item to purchase, for example - then any other function that 
 uses that same `cart` array will be affected by this addition. That may be 
-great, however it could also be bad. Let's imagine a bad situation:
+great, however, it could also be bad. Let's imagine a bad situation:
 
 The user clicks the "Purchase" button which calls a `purchase` function that
 spawns a network request and sends the `cart` array to the server. Because
 of a bad network connection, the `purchase` function has to keep retrying the
 request. Now, what if in the meantime the user accidentally clicks an "Add to Cart"
-button on an item they don't actually want before the network request begins?
+button on an item they don't want before the network request begins?
 If that happens and the network request begins, then that purchase function
 will send the accidentally added item because the `cart` array was modified.
 
@@ -669,7 +669,7 @@ using the old shopping cart wouldn't be affected by the changes.
 
 Two caveats to mention to this approach:
 
-1. There might be cases where you actually want to modify the input object,
+1. There might be cases where you want to modify the input object,
    but when you adopt this programming practice you will find that those cases
    are pretty rare. Most things can be refactored to have no side effects!
 
@@ -1384,7 +1384,7 @@ As stated in Clean Code, "There should never be more than one reason for a class
 to change". It's tempting to jam-pack a class with a lot of functionality, like
 when you can only take one suitcase on your flight. The issue with this is
 that your class won't be conceptually cohesive and it will give it many reasons
-to change. Minimizing the amount of times you need to change a class is important.
+to change. Minimizing the number of times you need to change a class is important.
 It's important because if too much functionality is in one class and you modify
 a piece of it, it can be difficult to understand how that will affect other
 dependent modules in your codebase.
@@ -2011,7 +2011,7 @@ process (in Node), and notifying you in the console with a stack trace.
 
 Doing nothing with a caught error doesn't give you the ability to ever fix
 or react to said error. Logging the error to the console (`console.log`)
-isn't much better as often times it can get lost in a sea of things printed
+isn't much better as oftentimes it can get lost in a sea of things printed
 to the console. If you wrap any bit of code in a `try/catch` it means you
 think an error may occur there and therefore you should have a plan,
 or create a code path, for when it occurs.
